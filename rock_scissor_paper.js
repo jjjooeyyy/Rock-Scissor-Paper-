@@ -6,6 +6,7 @@
 // Initialise mark for computer and player
 const computerScore = 0;
 const playerScore = 0;
+const result = "";
 
 // Generate random choice for computer
 function getComputerChoice() {
@@ -28,12 +29,32 @@ function getComputerChoice() {
 const computerSelection = getComputerChoice();
 
 // Get player choice
-const playerSelection = prompt("What's your choice?");
-
+const playerSelection = prompt("What's your choice? rock, scissors, paper").toLowerCase();
+return playerSelection;
 
 // Play single round 
 function playRound(playerSelection, compueterSelection) {
 
+    //When tie 
+if(playerSelection == compueterSelection) {
+   result = ("It's a tie! " + "\n" + "You both chose " + playerSelection + "\n" + "Player Score: " + playerScore + "\n" + "Computer Score: " + computerScore);
+}
+  
+   //When player win
+if((playerSelection === "rock" && computerSelection === "Scissors") ||
+   (playerSelection === "paper" && compueterSelection === "Rock") || 
+   (playerSelection === "scissors" && compueterSelection === "Paper")) {
+    playerScore++;
+    result = ("You win! " + playerSelection + " beats " + compueterSelection + "\n" + "Player Score: " + playerScore + "\n" + "Computer Score: " + computerScore);
+   }
+
+   //When computer win
+if((compueterSelection === "rock" && playerSelection === "Scissors") ||
+  (computerSelection === "paper" && playerSelection === "Rock") || 
+  (compueterSelection === "scissors" && playerSelection === "Paper")) {
+   computerScore++;
+   result = ("You lose! " + compueterSelection + " beats " + playerSelection + "\n" + "Player Score: " + playerScore + "\n" + "Computer Score: " + computerScore);
+}
 }
 
 
