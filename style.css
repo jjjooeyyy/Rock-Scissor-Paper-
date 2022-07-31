@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -13,54 +15,56 @@ header {
 }
 
 body {
-    background-color: rgb(123, 123, 201);
+    background: radial-gradient(circle, rgba(238,174,202,1) 8%, rgba(148,187,233,1) 84%);
 }
 
-.score-board {
+#score-board {
     border: 3px solid white;
-    width: 200px;
-    margin: 20px auto; /* Top, bottom 20px auto center */
+    width: 270px;
+    margin: 50px auto; /* Top, bottom 20px auto center */
     color: whitesmoke;
-    font-size: 46px;
-    border-radius: 4px;
+    font-size: 50px;
+    border-radius: 10px;
     text-align: center;
     padding: 20px 20px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: monospace;
     position: relative;
-    margin-top: 50px;
+    margin-top: 10%;
 }
 
 .badge {
-    background: #E2584D;
-    color: whitesmoke;
-    font-size: 14px;
+    background: #cf68cf;
+    color: rgb(15, 14, 14);
+    font-size: 20px;
     padding: 2px 10px;
-    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #user-label {
     position: absolute;
-    top: 30px;
-    left: -25px;
+    top: 35px;
+    left: -35px;
 }
 
 #computer-label {
     position: absolute;
-    top: 30px;
-    right: -25px;
+    top: 35px;
+    right: -30px;
 }
 
 .result {
     font-size: 35px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: whitesmoke;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #cf4ecf;
     text-transform: uppercase;
     text-align: center;
     padding: 20px;
     font-weight: 700;
 }
 
-.choices {
+#choices {
     display: flex;
     flex-direction: row;
     gap: 5rem;
@@ -83,19 +87,40 @@ transition: all 0.3s ease;
 
 .choice:hover {
     cursor: pointer;
-    background:rgb(160, 160, 238) ;
+    background:rgb(160, 160, 238);
 }
 
 #action-msg {
     text-align: center;
     margin: 5rem ;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 35px;
-    color: whitesmoke;
+    color: #cf4ecf;
     text-transform: uppercase;
     font-weight: 600;
 }
 
 .green {
-    
+    border: 5px solid rgb(54, 229, 48);
+    box-shadow: 0 0 10px rgb(24, 109, 21);
+    animation: blink 1s linear;
+   
 }
+
+.red {
+    border: 5px solid rgb(245, 41, 41);
+    box-shadow: 0 0 10px rgb(145, 17, 17);
+    animation: blink 1s linear ;
+}
+
+.blue {
+    border: 5px solid rgb(142, 166, 202);
+    box-shadow: 0 0 10px rgb(14, 23, 75);
+    animation: blink 1s linear ;
+}
+
+@keyframes blink {
+    100% {
+      opacity: 0;
+    }
+  }
