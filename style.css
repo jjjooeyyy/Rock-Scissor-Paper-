@@ -6,14 +6,6 @@
     box-sizing: border-box;
 }
 
-header {
-    text-align: center;
-    padding: 20px;
-    color: #25272E;
-    background: whitesmoke;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
 body {
     background: radial-gradient(circle, rgba(238,174,202,1) 8%, rgba(148,187,233,1) 84%);
 }
@@ -123,4 +115,37 @@ transition: all 0.3s ease;
     100% {
       opacity: 0;
     }
+  }
+
+  @media screen and (max-width: 768px) {
+
+    #score-board {
+        width: 200px;
+        font-size: 30px;
+    }
+
+    .badge {
+        font-size: 10px;
+    }
+
+    .result {
+       font-size: 25px;
+    }
+    
+    #choices {
+      gap: 2rem;
+    }
+
+    .choice {
+        border: 2px solid whitesmoke;
+    }
+
+    #choices img{
+        width: 70px;
+    }
+    
+    #action-msg{
+        font-size: 25px;
+    }
+
   }
